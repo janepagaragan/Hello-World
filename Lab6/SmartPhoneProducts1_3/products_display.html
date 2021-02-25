@@ -10,7 +10,6 @@
         var store_name = "Jane Pagaragan"    
         var first_name = 'Jane ';
         var last_name = 'Pagaragan';
-        var today = new Date();
     </script>
 </head>
 <body >
@@ -47,7 +46,7 @@
     onmouseover="
         spins_span.innerHTML = ++spins;
         this.className = 'item rotate';
-        hit_spin_span.innerHTML = hits_span.innerHTML/spins_span.innerHTML;"
+        hit_spin_span.innerHTML = (hits_span.innerHTML/spins_span.innerHTML).toFixed(2);"
     onclick="
         hits_span.innerHTML = ++hits;
         this.className='item';"
@@ -107,14 +106,15 @@
 </main></div>
 <footer>
     <script>
-
+        line=1;
+        now = new Date();
     document.write(`
     <table border="1" style="margin-left: auto; margin-right: auto; text-align: center;">
         <tr><th colspan="2"><h1>Your One Stop For Used Phones - ${first_name[0] + '.' + last_name[0] + '.'}'s</h1></th></tr>
-        <tr><td>1.</td><td><br />Copyright @ ${first_name + last_name}</td></tr>
-        <tr><td>2.</td><td>${new Date().getFullYear}</td></tr>
-        <tr><td>3.</td><td>
-            ${new Date}
+        <tr><td>${line}</td><td><br />Copyright @ ${first_name + last_name}</td></tr>
+        <tr><td>${++line}</td><td>${now.getFullYear()}</td></tr>
+        <tr><td>${++line}</td><td>
+            ${(now.getHours() + 11) %12 + 1 + ':' + now.getMinutes() + ' ' +((now.getHours() < 12)?'AM':'PM')}
             </td></tr>
     </table>
     `);
