@@ -1,0 +1,34 @@
+/* General */  
+main
+{
+    display:flex; 
+    flex-flow:row wrap;
+    justify-content:space-around; 
+    background-image: url(https://dport96.github.io/ITM352/morea/030.ui-basics/phone_globe.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    color:black
+}
+
+/* Typography */  
+h1{text-align:center
+}
+h2{text-align:center}
+
+/* block styling */  
+div{
+    border: 5px solid black;
+display: flex
+}
+
+/* Form styling */  
+img{height:200px; width:200px}
+
+/* Styling the products display */ 
+body{width:800px;
+    margin:0 auto;}
+
+div{
+    border: 5px solid black;
+display: flex
+}
