@@ -1,0 +1,131 @@
+<script> //* DATA VALIDATION* Original Author: Dan Port//
+    //Check for errors//
+    function isNonNegInt(q, return_errors = false) {
+       //No errors//
+        if (q == '') q = 0;
+        var errors = [];
+
+        //Number Value?//
+        if (Number(q) != q) errors.push('<font color="red">Not a valid input!</font>');
+
+        //Negative number//
+        else if (q < 0) errors.push('<font color="red">Negative value!</font>');
+
+        //Whole Number?//
+        else if (parseInt(q) != q) errors.push('<font color="red">Quantity must be whole number!</font>');
+        return return_errors ? errors : (errors.length == 0);
+    }
+    
+    //Checks quantity desired//
+    function checkQuantityTextbox(theTextbox) {
+        var errs = isNonNegInt(theTextbox.value, true);
+        if (errs.length == 0) errs = ['Desired Quantity:'];
+        if (theTextbox.value.trim() == '') errs = ['Quantity'];
+        document.getElementById(theTextbox.name + '_label').innerHTML = errs.join(", ");
+    }
+    //Gets string containing form data// 
+    window.onload = function () {
+        let params = (new URL(document.location)).searchParams;
+    //Valid Quantities?//
+        if (params.has('purchase_submit')) {
+            has_errors = false; // assumes quantities are valid
+            total_qty = 0; // checks if selection was made
+            for (i = 0; i < exhaust.length; i++) {
+                if (params.has(`quantity${i}`)) {
+                    a_qty = params.get(`quantity${i}`);
+
+                    // make textboxes sticky in case of invalid data
+                    performance_parts_form[`quantity${i}`].value = a_qty;
+                    total_qty += a_qty;
+                    if (!isNonNegInt(a_qty)) {
+                        has_errors = true; //Invalid Quantity
+                        checkQuantityTextbox(product_selection_form[`quantity${i}`]);
+                    }
+                }
+            }
+          //If contains error//
+            if (has_errors) {
+                alert("Please enter only valid quantities!");
+            //If no quantity selected
+            } else if (total_qty == 0) { 
+                alert("No quantities selected");
+            // No errors
+            } else {
+                window.location = `./invoice.html${document.location.search}`;
+                window.stop;
+            }
+        }
+    }
+</script>
+</script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="./products_data.js">
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
+    <link href="products-style.css" rel="stylesheet">
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FT86 Products</title>
+
+</head>
+
+<body>
+    <form name="performance_parts_form" action="" method="PUSH">
+        <div class="header">
+            <h1 style="color:white; font-family: 'Teko', sans-serif; font-size: 500%;">Elevated Racing</h1>
+        </div>
+
+        <div class="topnav">
+            <a href="index.html" style="font-family: 'Teko', sans-serif ;">HOME</a>
+            <a href="products_display.html" style="font-family: 'Teko', sans-serif ;">FT86 Products</a>
+
+
+        </div>
+
+
+        <script>
+    // Exhaust
+        </script>
+        <div id="exhaust" class="exhaust">
+            <h1 style="text-align: center; font-size: 200%">FR-S/BRZ/86 PRODUCTS</h1>
+            <main>
+
+                <script>
+                    //Exhaust column//
+                    for (i = 0; i <= exhaust.length; i++) {
+                        document.write(`
+    <section class="item">
+        <h2>${exhaust[i].brand}</h2>
+        <p>$${exhaust[i].price}</p>
+        <label id="quantity${i}_label"}">Quantity</label>
+        <input type="text" placeholder="0" name="quantity${i}" 
+                                onkeyup="checkQuantityTextbox(this);">
+        <img src="${exhaust[i].image}">
+        <p>${exhaust[i].description}</p>
+        <br>
+    </section>
+    `);
+                    }
+                </script>
+            </main>
+        </div>
+        <br>
+
+
+        </div>
+        </main>
+        </div>
+
+</body>
+<footer>
+    <input style="font-size: xx-large" type="submit" value="Purchase!" name="purchase_submit">
+
+
+</footer>
+
+</html>

@@ -1,0 +1,71 @@
+
+/*Format Titles - w3Schools*/
+table{
+    font-family: 'Teko', sans-serif;
+    font-size: larger; 
+    margin-left: auto;
+    margin-right: auto;
+    border-color: black
+  }
+  p{
+    font-family: 'Teko', sans-serif;
+   text-align: center;
+    font-size: larger;
+
+  }
+  h2 {
+    font-family: 'Teko', sans-serif; text-align: center; font-size: 200%; } 
+  
+/* Style the header w3Schools*/
+.header {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://www.drifted.com/wp-content/uploads/2018/02/scion-frs-formula-drift-car-drifting-thumbnail.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Style the top navigation bar w3Schools*/
+.topnav {
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+main{
+  
+    text-align: center;
+    display:flex; 
+    flex-flow:row wrap;
+    justify-content:space-around; 
+}
+/* Style the topnav links w3Schools*/
+.topnav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover w3Schools*/
+.topnav a:hover {
+    background-color: red;
+    color: black;
+}
+
+/* Image styling */  
+img{
+    height:200px;
+    width:300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;}
+
+
+
+  
