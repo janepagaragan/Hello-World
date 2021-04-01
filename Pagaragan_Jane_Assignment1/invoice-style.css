@@ -18,13 +18,13 @@ table{
   
 /* Style the header w3Schools*/
 .header {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://www.drifted.com/wp-content/uploads/2018/02/scion-frs-formula-drift-car-drifting-thumbnail.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    padding: 10px;
-    text-align: center;
+  background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://wallpaperaccess.com/full/1908532.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 10px;
+  text-align: center;
 }
 
 /* Style the top navigation bar w3Schools*/
@@ -68,4 +68,36 @@ img{
 
 
 
+  /* Design footer*/
+  .footer {
+    background-color:black;
+    text-align: center;
+    padding: 10px;
+  }
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
   
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-facebook {
+    background: red;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: red;
+    color: white;
+  }
+  .fa-instagram {
+    background:red;
+    color: white;
+  }

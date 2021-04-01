@@ -1,4 +1,4 @@
-<script> //* DATA VALIDATION* Original Author: Dan Port//
+<script> //* DATA VALIDATION* Code from Lab 12 and Original Author: Dan Port//
     //Check for errors//
     function isNonNegInt(q, return_errors = false) {
        //No errors//
@@ -66,33 +66,36 @@
     </script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
-    <link href="products-style.css" rel="stylesheet">
+    <link href="order-form.css" rel="stylesheet">
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FT86 Products</title>
-
-</head>
-
-<body>
-    <form name="performance_parts_form" action="" method="PUSH">
-        <div class="header">
+    <title>Order Form</title>
+   <div class="header">
             <h1 style="color:white; font-family: 'Teko', sans-serif; font-size: 500%;">Elevated Racing</h1>
         </div>
 
         <div class="topnav">
             <a href="index.html" style="font-family: 'Teko', sans-serif ;">HOME</a>
-            <a href="products_display.html" style="font-family: 'Teko', sans-serif ;">FT86 Products</a>
-
-
+            <a href="exhaust.html" style="font-family: 'Teko', sans-serif ;">EXHAUST SYSTEMS</a>
+            <a href="fi.html" style="font-family: 'Teko', sans-serif ;">FORCED INDUCTION</a>
+            <a href="suspension.html" style="font-family: 'Teko', sans-serif ;">SUSPENSION</a>
+            <a href="products_display.html" style="font-family: 'Teko', sans-serif ;">ORDER FORM</a>
         </div>
+</head>
+
+<body>
+    <form name="performance_parts_form" action="" method="PUSH">
+     
 
 
         <script>
     // Products
         </script>
-        <div class="exhaust">
-            <h1 style="text-align: center; font-size: 200%">FR-S/BRZ/86 PRODUCTS</h1>
+        <div class="exhaust" background-color=white style="width:800px;
+        margin:0 auto;">
+            <h1 style="text-align: center; font-size: 200%">ORDER FORM</h1>
             <main>
 
                 <script>
@@ -106,7 +109,6 @@
         <input type="text" placeholder="0" name="quantity${i}" 
                                 onkeyup="checkQuantityTextbox(this);">
         <img src="${exhaust[i].image}">
-        <p>${exhaust[i].description}</p>
         <br>
     </section>
     `);
@@ -123,8 +125,14 @@
 
 </body>
 <footer>
+    
     <input style="font-size: xx-large" type="submit" value="Purchase!" name="purchase_submit">
-
+    <div class="footer">
+        <p style="color: white; font-size: 200%; ">CONNECT WITH US</p>
+        <a href="" class="fa fa-facebook"></a>
+      <a href="" class="fa fa-twitter"></a>
+      <a href="" class="fa fa-instagram"></a>
+      </div>
 
 </footer>
 

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./products_data copy.js">
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suspension</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
+    <link href="products.css" rel="stylesheet">
+ <div class="header">
+        <h1 style="color:white; font-family: 'Teko', sans-serif; font-size: 500%;">Elevated Racing</h1>
+    </div>
+
+    <div class="topnav">
+        <a href="index.html" style="font-family: 'Teko', sans-serif ;">HOME</a>
+        <a href="exhaust.html" style="font-family: 'Teko', sans-serif ;">EXHAUST SYSTEMS</a>
+        <a href="fi.html" style="font-family: 'Teko', sans-serif ;">FORCED INDUCTION</a>
+        <a href="suspension.html" style="font-family: 'Teko', sans-serif ;">SUSPENSION</a>
+        <a href="products_display.html" style="font-family: 'Teko', sans-serif ;">ORDER FORM</a>
+    </div>
+</head>
+<body>
+   
+    <h1 style="text-align: center; font-size: 300%">Suspension Parts</h1>
+
+    <h2 style="text-align:center; font-size: xx-large;">Gallery</h2>
+
+    <div class="container">
+      <div class="mySlides">
+        <div class="numbertext">1 / 6</div>
+        <a href="#bc">
+        <img src="https://cdn.shopify.com/s/files/1/0941/4966/products/F-20-BR-BRZ-FRS-BC-Coilovers-1_1024x1024.jpg?v=1581717056" style="width:300px;height:225px"></a>
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">2 / 6</div>
+        <a href="#bc">
+        <img src="https://cdn.shopify.com/s/files/1/0941/4966/products/BC-Racing-BRZ-Coilovers-3_1024x1024.jpg?v=1581716711" style="width:320px;height:225px"></a>
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">3 / 6</div>
+        <a href="#bc">
+        <img src="https://cdn.shopify.com/s/files/1/0058/0252/4785/products/F-20-ZR-installed-main_1024x1024@2x.jpg?v=1572376224" style="width:320px;height:225px"></a>
+      </div>
+        
+      <div class="mySlides">
+        <div class="numbertext">4 / 6</div>
+        <a href="#air">
+        <img src="https://cdn.shopify.com/s/files/1/0246/3475/3098/products/AirLiftPerformance3PDigitalManagement2_b86a8e1a-5724-4e16-9e8d-f49e8b8fdbf0_1800x1800.jpg?v=1602087172" style="width:330px;height:270px"></a>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">5 / 6</div>
+        <a href="#air">
+        <img src="https://i.ytimg.com/vi/vYTUhA81S_Q/maxresdefault.jpg" style="width:350px;height:225px"></a>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">6 / 6</div>
+        <a href="#air">
+        <img src="https://www.bcfab.com/assets/images/2012-2016-scion-fr-s-02_800x600.jpg" style="width:300px;height:225px"></a>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+    
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="https://cdn.shopify.com/s/files/1/0941/4966/products/F-20-BR-BRZ-FRS-BC-Coilovers-1_1024x1024.jpg?v=1581717056" style="width:200px; height:125px" onclick="currentSlide(1)" alt="BC Racing">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="https://cdn.shopify.com/s/files/1/0941/4966/products/BC-Racing-BRZ-Coilovers-3_1024x1024.jpg?v=1581716711" style="width:200px; height:125px" onclick="currentSlide(2)" alt="BC Racing">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="https://cdn.shopify.com/s/files/1/0058/0252/4785/products/F-20-ZR-installed-main_1024x1024@2x.jpg?v=1572376224" style="width:200px; height:125px" onclick="currentSlide(3)" alt="BC Racing">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="https://cdn.shopify.com/s/files/1/0246/3475/3098/products/AirLiftPerformance3PDigitalManagement2_b86a8e1a-5724-4e16-9e8d-f49e8b8fdbf0_1800x1800.jpg?v=1602087172" style="width:200px; height:115px" onclick="currentSlide(4)" alt="Air Lift">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="https://i.ytimg.com/vi/vYTUhA81S_Q/maxresdefault.jpg" style="width:200px; height:125px" onclick="currentSlide(5)" alt="Air Lift">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="https://www.bcfab.com/assets/images/2012-2016-scion-fr-s-02_800x600.jpg" style="width:200px; height:125px" onclick="currentSlide(6)" alt="Air Lift">
+        </div>
+      </div>
+    </div>
+    
+    <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
+        
+
+
+
+<div id="bc">
+<script>
+    //BC Loop//
+    for (i = 0; i <= coil.length; i++) {
+        document.write(`
+<section class="item">
+<h2>${coil[i].brand}</h2>
+<p>$${coil[i].price}</p>
+<img src="${coil[i].image}">
+<p>${coil[i].description}</p>
+<br>
+</section>
+`);
+    }
+</script></div>
+<br>
+<br>
+<br>
+<br>
+<div id="air">
+<script>
+    //Air Lift Loop//
+    for (i = 0; i <= bags.length; i++) {
+        document.write(`
+<section class="item">
+<h2>${bags[i].brand}</h2>
+<p>$${bags[i].price}</p>
+<img src="${bags[i].image}">
+<p>${bags[i].description}</p>
+<br>
+</section>
+`);
+    }
+</script></div>
+
+<div class="footer">
+  <p style="color: white; font-size: 200%; ">CONNECT WITH US</p>
+  <a href="" class="fa fa-facebook"></a>
+<a href="" class="fa fa-twitter"></a>
+<a href="" class="fa fa-instagram"></a>
+</div>
+</body>
+
+</html>

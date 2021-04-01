@@ -38,14 +38,18 @@
 <body>
   <div class="header">
     <h1 style="color:white; font-family: 'Teko', sans-serif; font-size: 500%;">Elevated Racing</h1>
-  </div>
+</div>
 
   <div class="topnav">
     <a href="index.html" style="font-family: 'Teko', sans-serif ;">HOME</a>
-    <a href="products_display.html" style="font-family: 'Teko', sans-serif ;">FT86 Products</a>
+        <a href="exhaust.html" style="font-family: 'Teko', sans-serif ;">EXHAUST SYSTEMS</a>
+        <a href="fi.html" style="font-family: 'Teko', sans-serif ;">FORCED INDUCTION</a>
+        <a href="suspension.html" style="font-family: 'Teko', sans-serif ;">SUSPENSION</a>
+        <a href="products_display.html" style="font-family: 'Teko', sans-serif ;">ORDER FORM</a>
 
   </div>
   <br>
+  <h2 style="font-size: 300%;">Thank you for your purchase!</h2>
   <h2>Purchase Invoice</h2>
   <table border="2" >
     <tbody>
@@ -76,18 +80,18 @@
 
 
         // Compute tax
-        var tax_rate = 0.0575;
+        var tax_rate = 0.0471;
         var tax = tax_rate * subtotal;
 
         // Compute shipping
         if (subtotal <= 1000) {
-          shipping = 50;
+          shipping = subtotal*0.05;
         }
         else if (subtotal <= 5000) {
-          shipping = 75;
+          shipping = subtotal*0.03;
         }
         else {
-          shipping = 0 * subtotal; // Free Shipping due to big order
+          shipping = 0; // Free Shipping due to big order
         }
 
         // Compute grand total
@@ -128,8 +132,8 @@
 
     <br><b><p>
       SHIPPING RATES:<br>
-      A subtotal $0 - $1000 will be $50 shipping<br>
-      A subtotal $1000 - $5000 will be $75 shipping<br>
+      A subtotal between $0 - $1000 will be charged 5% of subtotal<br>
+      A subtotal between $1000 - $5000 will be charged 3% of subtotal<br>
       Subtotals over $5000 will have free shipping<br>
     </p></b>
   </div>
