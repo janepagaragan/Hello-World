@@ -7,6 +7,7 @@
   var quantities = [];
   //creates variable to display name on invoice
   var name = params.get('full name');
+  var usern = params.get('username');
   // Create Invoice
   if (params.has('purchase_submit')) {
     for (i = 0; i < exhaust.length; i++) {
@@ -59,12 +60,23 @@
   </div>
   <br>
 
-  <h2 style="font-size: 300%;">Thank you for your purchase
-    <script>
 
-      document.write(`${name}`)
-
-    </script>!
+  <script>
+    //Personalizes to user
+    if (params.has('full name')) {
+      document.write(`<h2>Welcome to Elevated Racing ${name}!</h2>`)
+    }
+    else {
+      document.write(`<h2>Welcome back ${usern}!</h2>`);
+    }
+    //Determines what message is shown after registration/login
+    if (params.has('purchase_submit')) {
+      document.write(`<h2>Thank you for your purchase!</h2>`)
+    }
+    else {
+      document.write(`<h2>Please return to Order Form</h2>`);
+    }
+  </script>
   </h2>
 
   <h2>Purchase Invoice</h2>
