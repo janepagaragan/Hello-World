@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./products_data copy.js">
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
+    <link href="products.css" rel="stylesheet">
+ <div class="header">
+        <h1 style="color:white; font-family: 'Teko', sans-serif; font-size: 500%;">Elevated Racing</h1>
+    </div>
+
+    <div class="topnav">
+        <a href="index.html" style="font-family: 'Teko', sans-serif ;">HOME</a>
+        <a href="exhaust.html" style="font-family: 'Teko', sans-serif ;">EXHAUST SYSTEMS</a>
+        <a href="fi.html" style="font-family: 'Teko', sans-serif ;">FORCED INDUCTION</a>
+        <a href="suspension.html" style="font-family: 'Teko', sans-serif ;">SUSPENSION</a>
+        <a href="products_display.html" style="font-family: 'Teko', sans-serif ;">ORDER FORM</a>
+        <a href="Sign_in.html" style="font-family: 'Teko', sans-serif ;">SIGN IN</a>
+    </div>
+</head>
+<body>
+   <script>
+     document.write(`<form name="login" action="process_login${location.search}" method="post">`)
+   </script>
+    <h1 style="text-align: center; font-size: 300%">YOUR ACCOUNT FOR ALL YOUR FT86 NEEDS</h1>
+    
+      <div class="container"><br>
+          <label for="username"><b>Username</b></label>
+          <input type="text" name="username" id="username" size="80" placeholder="Username" required><br>
+          <label for="password"><b>Password</b></label>
+          <input type="password" name="password" size="80"  placeholder="Password" onkeyup="" required>
+          <input type="submit" value="Login" name="process_login" class='btn'>
+          </div>
+     <br>
+     <script>
+      document.write(`<h2>Don't have an account? Register <a href="./registration.html${location.search}">here!</a></h2>`);
+    </script>
+   
+<div class="footer">
+  <p style="color: white; font-size: 200%; ">CONNECT WITH US</p>
+  <a href="" class="fa fa-facebook"></a>
+<a href="" class="fa fa-twitter"></a>
+<a href="" class="fa fa-instagram"></a>
+</div>
+</body>
+
+</html>

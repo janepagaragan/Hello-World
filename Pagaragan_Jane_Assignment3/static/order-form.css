@@ -1,0 +1,104 @@
+/* Code Guidance from w3 School */  
+/*Format Titles*/
+h1{
+    font-family: 'Teko', sans-serif;}
+    h2 {
+        font-family: 'Teko', sans-serif; text-align: center; } 
+p {
+    font-family: 'Teko', sans-serif; text-align: center; width: 300px; margin: auto; }
+label {
+    display: block;
+    text-align: center;
+    font-family: 'Teko', sans-serif;
+}
+input {
+    padding: 5px 10px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-family: 'Teko', sans-serif;
+  }
+  
+      /* Header */
+.header {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://wallpaperaccess.com/full/1908532.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Menu*/
+.topnav {
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+main{
+  
+    text-align: center;
+    display:flex; 
+    flex-flow:row wrap;
+    justify-content:space-around; 
+}
+/* Menu Links */
+.topnav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+    background-color: red;
+    color: black;
+}
+
+/* Image styling */  
+img{
+    height:200px;
+    width:300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;}
+
+
+    /* Design footer*/
+    .footer {
+        background-color:black;
+        text-align: center;
+        padding: 10px;
+      }
+      .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+      }
+      
+      .fa:hover {
+          opacity: 0.7;
+      }
+      
+      .fa-facebook {
+        background: red;
+        color: white;
+      }
+      
+      .fa-twitter {
+        background: red;
+        color: white;
+      }
+      .fa-instagram {
+        background:red;
+        color: white;
+      }
