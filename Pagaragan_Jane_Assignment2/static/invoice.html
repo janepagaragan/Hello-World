@@ -55,7 +55,7 @@
     <a href="fi.html" style="font-family: 'Teko', sans-serif ;">FORCED INDUCTION</a>
     <a href="suspension.html" style="font-family: 'Teko', sans-serif ;">SUSPENSION</a>
     <a href="products_display.html" style="font-family: 'Teko', sans-serif ;">ORDER FORM</a>
-    <a href="Sign_in.html" style="font-family: 'Teko', sans-serif ;">SIGN IN</a>
+    
 
   </div>
   <br>
@@ -69,15 +69,8 @@
     else {
       document.write(`<h2>Welcome back ${usern}!</h2>`);
     }
-    //Determines what message is shown after registration/login
-    if (params.has('purchase_submit')) {
-      document.write(`<h2>Thank you for your purchase!</h2>`)
-    }
-    else {
-      document.write(`<h2>Please return to Order Form</h2>`);
-    }
   </script>
-  </h2>
+  <h2>Thank you for your purchase!</h2>
 
   <h2>Purchase Invoice</h2>
   <table border="2">

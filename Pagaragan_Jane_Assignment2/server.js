@@ -6,18 +6,15 @@ var myParser = require("body-parser");
 app.use(myParser.urlencoded({ extended: true }));
 var qs = require('qs');
 var fs = require('fs');
-const { response } = require('express');
 
-//user_data = require('./user_data.json');
 var user_data_file = './user_data.json';
+
 if(fs.existsSync(user_data_file)) {
     var file_stats = fs.statSync(user_data_file);
 var user_data = JSON.parse(fs.readFileSync(user_data_file, 'utf-8'));
 } else {
     console.log(`${user_data_file} does not exist!`);
 }
-
-//console.log(user_data);
 
 app.all('*',function(req,res,next){
     console.log(req.method, req.path);
@@ -67,6 +64,7 @@ user_data[username]["email"] = req.body["email"];
     
 //Save updated user_data
 fs.writeFileSync(user_data_file, JSON.stringify(user_data));
+
 //Send to Invoice
 req.query["purchase"]="true";
     req.query["username"]= req.body["username"];
