@@ -14,22 +14,48 @@
  <div class="header">
         <h1 style="color:white; font-family: 'Teko', sans-serif; font-size: 500%;">Elevated Racing</h1>
     </div>
-
+    <script>//Navbar from w3 schools</script>
     <div class="topnav">
-        <a href="index.html" style="font-family: 'Teko', sans-serif ;">HOME</a>
-        <a href="exhaust.html" style="font-family: 'Teko', sans-serif ;">EXHAUST SYSTEMS</a>
-        <a href="fi.html" style="font-family: 'Teko', sans-serif ;">FORCED INDUCTION</a>
-        <a href="suspension.html" style="font-family: 'Teko', sans-serif ;">SUSPENSION</a>
-        <a href="products_display.html" style="font-family: 'Teko', sans-serif ;">ORDER FORM</a>
-        <a href="Sign_in.html" style="font-family: 'Teko', sans-serif ;">SIGN IN</a>
-    </div>
+      <a href="index.html" style="font-family: 'Teko', sans-serif ;">HOME</a>
+      <a href="exhaustdisplay.html" style="font-family: 'Teko', sans-serif ;">EXHAUST SYSTEMS</a>
+      <a href="fidisplay.html" style="font-family: 'Teko', sans-serif ;">FORCED INDUCTION</a>
+      <a href="suspension_display.html" style="font-family: 'Teko', sans-serif ;">SUSPENSION</a>
+      <a href="wheeldisplay.html" style="font-family: 'Teko', sans-serif ;">SUSPENSION</a>
+      <a href="cart.html" style="font-family: 'Teko', sans-serif ;">VIEW CART</a>
+      <a href="Sign_in.html" style="font-family: 'Teko', sans-serif ;">LOGIN</a>
+     
+      <a href="userinfo.html" style="font-family: 'Teko', sans-serif ;">
+        <script>
+            //personalizes navbar after login, code assistance from Justina Bui
+      function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+      }
+
+      if (typeof getCookie('username') != 'undefined') {
+        console.log('working');
+       document.write("Welcome" + ' ' + getCookie('username'))
+      }
+
+  </script></a> 
+<form name="logout_form" action="" method="PUSH">
+      <input style="font-family: 'Teko', sans-serif ;" type="submit" name="logout" value="Logout"></form>
+  </div>
 </head>
 <body>
    <script>
+     //Login Coding borrowed from W3Schools
      document.write(`<form name="login" action="process_login${location.search}" method="post">`)
    </script>
+  
     <h1 style="text-align: center; font-size: 300%">YOUR ACCOUNT FOR ALL YOUR FT86 NEEDS</h1>
-    
+    <script>//Warns user that they are logged in
+      if(document.cookie('username') != 'undefined'){
+       alert("You are already logged in!");
+      }
+  
+    </script>
       <div class="container"><br>
           <label for="username"><b>Username</b></label>
           <input type="text" name="username" id="username" size="80" placeholder="Username" required><br>

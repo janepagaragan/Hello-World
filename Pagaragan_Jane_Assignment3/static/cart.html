@@ -1,0 +1,93 @@
+<script>
+  //Function from Professor Port Assignment 3 code example
+  function loadJSON(service, callback) {   
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('POST', service, false);
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            
+            callback(xobj.responseText);
+          }
+    };
+    xobj.send(null);  
+ }
+
+ loadJSON('get_cart_data', function (response) {
+    // Parsing JSON string into object
+    cart_data = JSON.parse(response);
+  });
+
+  console.log(cart_data);
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
+  <link href="products.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Invoice</title>
+  <style>
+    body {
+      transform: scale(1);
+      transform-origin: 0 0;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1 style="color:white; font-family: 'Teko', sans-serif; font-size: 500%;">Elevated Racing</h1>
+      </div>
+    
+      <div class="topnav">
+        <a href="index.html" style="font-family: 'Teko', sans-serif ;">HOME</a>
+        <a href="exhaustdisplay.html" style="font-family: 'Teko', sans-serif ;">EXHAUST SYSTEMS</a>
+        <a href="fidisplay.html" style="font-family: 'Teko', sans-serif ;">FORCED INDUCTION</a>
+        <a href="suspension_display.html" style="font-family: 'Teko', sans-serif ;">SUSPENSION</a>
+        <a href="wheeldisplay.html" style="font-family: 'Teko', sans-serif ;">SUSPENSION</a>
+        <a href="cart.html" style="font-family: 'Teko', sans-serif ;">VIEW CART</a>
+        <a href="Sign_in.html" style="font-family: 'Teko', sans-serif ;">LOGIN</a>
+       
+        <a href="userinfo.html" style="font-family: 'Teko', sans-serif ;">
+          <script>
+              //personalizes navbar after login, code assistance from Justina Bui
+        function getCookie(name) {
+          const value = `; ${document.cookie}`;
+          const parts = value.split(`; ${name}=`);
+          if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        if (typeof getCookie('username') != 'undefined') {
+          console.log('working');
+         document.write("Welcome" + ' ' + getCookie('username'))
+        }
+
+    </script></a> 
+<form name="logout_form" action="" method="PUSH">
+        <input style="font-family: 'Teko', sans-serif ;" type="submit" name="logout" value="Logout"></form>
+    </div>
+      <br>
+      <h1>Shopping Cart</h1>
+
+<div class="shopping-cart">
+
+  <div class="column-labels">
+    <label class="product-image">Image</label>
+    <label class="product-details">Product</label>
+    <label class="product-price">Price</label>
+    <label class="product-quantity">Quantity</label>
+    <label class="product-removal">Remove</label>
+    <label class="product-line-price">Total</label>
+  </div>
+
+      
+      <button class="checkout">Checkout</button>
+
+</div>
+</body>

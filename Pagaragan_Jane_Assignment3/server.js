@@ -6,18 +6,24 @@ var myParser = require("body-parser");
 app.use(myParser.urlencoded({ extended: true }));
 var qs = require('qs');
 var fs = require('fs');
-const { response } = require('express');
+var cookieParser = require('cookie-parser');
+app.use(cookieParser());
+var session = require('express-session');
+var products_list = require('./static/products_data.js');
+app.use(session({
+    secret: "vroom",
+    cookie: {maxAge: 36000},
+}));
 
-//user_data = require('./user_data.json');
+
 var user_data_file = './user_data.json';
+
 if(fs.existsSync(user_data_file)) {
     var file_stats = fs.statSync(user_data_file);
 var user_data = JSON.parse(fs.readFileSync(user_data_file, 'utf-8'));
 } else {
     console.log(`${user_data_file} does not exist!`);
 }
-
-//console.log(user_data);
 
 app.all('*',function(req,res,next){
     console.log(req.method, req.path);
@@ -33,20 +39,14 @@ app.post('/process_login', function(request,response,next){
     if(typeof user_data[username_entered] != 'undefined') {
         //If user + password is good, send to invoice
         if(user_data[username_entered]['password']== password_entered){
-             request.query["purchase"]="true";
-             request.query["full name"]= request.body["full name"];
-    request.query["username"]= request.body["username"];
-    response.redirect('/invoice.html?' + qs.stringify(request.query));
-        //Wrong Password
-        } else{
-            response.send(`${username_entered} password wrong`);
-        }
-        //User not found
-    } else{
-            response.send(`${username_entered} not found`);
-    }
-    
-});
+             response.cookie('username', username_entered);
+             response.redirect('/index.html?'); }
+            else{
+                response.send(`${username_entered} password wrong`);
+            }}else{
+                response.send(`${username_entered} not found`);
+            }
+            });
  
 //Process Registration
 app.post('/process_register', function(req,res,next){
@@ -67,12 +67,42 @@ user_data[username]["email"] = req.body["email"];
     
 //Save updated user_data
 fs.writeFileSync(user_data_file, JSON.stringify(user_data));
+
 //Send to Invoice
-req.query["purchase"]="true";
-    req.query["username"]= req.body["username"];
-    req.query["full name"]= req.body["full name"];
-res.redirect('/invoice.html?' + qs.stringify(req.query));
+res.cookie('username', username);
+res.redirect('/index.html?' );
 });
+
+app.all('*', function (request, response, next) {
+    console.log(`Got a ${request.method} to path ${request.path}`);
+    // need to initialize an object to store the cart in the session. We do it when there is any request so that we don't have to check it exists
+    // anytime it's used
+    if(typeof request.session.cart == 'undefined') { request.session.cart = {}; } 
+    next();
+});
+
+app.post("/get_products_data", function (request, response) {
+    response.json(products_data);
+});
+
+//Add to cart
+app.post("/addcart", function (request, response,next) {
+    var brand = request.query['brand'];
+    var quantities = request.query['quantities'].map(Number);
+    request.session.cart = brand
+    request.session.cart[brand] = quantities; 
+});
+app.post("/getcart", function(request, response){
+    response.json(request.session.cart);
+});
+
+//Logout
+app.post("/logout", function (request, response,next) {
+    response.session.destroy()
+    response.send("You are logged out")
+});
+
+
 
 app.use(express.static('./static'));
 var listener = app.listen(8080, () => {console.log('listening on port' + listener.address().port)});

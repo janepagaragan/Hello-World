@@ -1,0 +1,221 @@
+<script> //* DATA VALIDATION* Code from Lab 12 and Original Author: Dan Port//
+    //Check for errors//
+    function isNonNegInt(q, return_errors = false) {
+       //No errors//
+        if (q == '') q = 0;
+        var errors = [];
+
+        //Number Value?//
+        if (Number(q) != q) errors.push('<font color="red">Not a valid input!</font>');
+
+        //Negative number//
+        else if (q < 0) errors.push('<font color="red">Negative value!</font>');
+
+        //Whole Number?//
+        else if (parseInt(q) != q) errors.push('<font color="red">Quantity must be whole number!</font>');
+        return return_errors ? errors : (errors.length == 0);
+    }
+    
+    //Checks quantity desired//
+    function checkQuantityTextbox(theTextbox) {
+        var errs = isNonNegInt(theTextbox.value, true);
+        if (errs.length == 0) errs = ['Desired Quantity:'];
+        if (theTextbox.value.trim() == '') errs = ['Quantity'];
+        document.getElementById(theTextbox.name + '_label').innerHTML = errs.join(", ");
+    }
+    //Gets string containing form data// 
+    window.onload = function () {
+        let params = (new URL(document.location)).searchParams;
+    //Valid Quantities?//
+        if (params.has('purchase')) {
+            display_invoice();
+        }
+            if (params.has('purchase_submit')) {
+            has_errors = false; // assumes quantities are valid
+            total_qty = 0; // checks if selection was made
+            for (i = 0; i < coil.length; i++) {
+                if (params.has(`quantity${i}`)) {
+                    a_qty = params.get(`quantity${i}`);
+
+                    // make textboxes sticky in case of invalid data
+                    performance_parts_form[`quantity${i}`].value = a_qty;
+                    total_qty += a_qty;
+                    if (!isNonNegInt(a_qty)) {
+                        has_errors = true; //Invalid Quantity
+                        checkQuantityTextbox(product_selection_form[`quantity${i}`]);
+                    }
+                }
+            }
+          //If contains error//
+            if (has_errors) {
+                alert("Please enter only valid quantities!");
+            //If no quantity selected
+            } else if (total_qty == 0) { 
+                alert("No quantities selected");
+
+            } 
+        }
+    }
+</script>
+</script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="./Products.js">
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
+    <link href="products.css" rel="stylesheet">
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheels</title>
+   <div class="header">
+            <h1 style="color:white; font-family: 'Teko', sans-serif; font-size: 500%;">Elevated Racing</h1>
+        </div>
+
+        <div class="topnav">
+          <a href="index.html" style="font-family: 'Teko', sans-serif ;">HOME</a>
+          <a href="exhaustdisplay.html" style="font-family: 'Teko', sans-serif ;">EXHAUST SYSTEMS</a>
+          <a href="fidisplay.html" style="font-family: 'Teko', sans-serif ;">FORCED INDUCTION</a>
+          <a href="suspension_display.html" style="font-family: 'Teko', sans-serif ;">SUSPENSION</a>
+          <a href="wheeldisplay.html" style="font-family: 'Teko', sans-serif ;">SUSPENSION</a>
+          <a href="cart.html" style="font-family: 'Teko', sans-serif ;">VIEW CART</a>
+          <a href="Sign_in.html" style="font-family: 'Teko', sans-serif ;">LOGIN</a>
+         
+          <a href="userinfo.html" style="font-family: 'Teko', sans-serif ;">
+            <script>
+                //personalizes navbar after login, code assistance from Justina Bui
+          function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+          }
+  
+          if (typeof getCookie('username') != 'undefined') {
+            console.log('working');
+           document.write("Welcome" + ' ' + getCookie('username'))
+          }
+  
+      </script></a> 
+  <form name="logout_form" action="" method="PUSH">
+          <input style="font-family: 'Teko', sans-serif ;" type="submit" name="logout" value="Logout"></form>
+      </div>
+</head>
+
+<body>
+   
+    
+<br>
+<br>
+        <script>//Borrowed code below from w3Schools to make Gallery</script>
+        <script>//BC Coilovers Photos</script>
+  <div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 3</div>
+    <img src="https://cdn11.bigcommerce.com/s-8zxb6tk/images/stencil/1280x1280/products/22745/42941/6348427651_cc6b53729d_o__47455.1591728787.jpg?c=2" style="width:320px;height:225px"></a>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 3</div>
+    <img src="https://images.squarespace-cdn.com/content/v1/5b4188367c9327e167175023/1531120530271-YZIH7FQQ52EXOZ75ZRM3/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/LI5C6170.jpg?format=2500w" style="width:350px;height:225px"></a>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 3</div>
+    <img src="https://wheels-fitment.com/wheels-images/369/1887/Scion-FR-S-Work-Meister-S1-3P-sm.jpg" style="width:320px;height:205px"></a>
+  </div>
+  
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="https://cdn11.bigcommerce.com/s-8zxb6tk/images/stencil/1280x1280/products/22745/42941/6348427651_cc6b53729d_o__47455.1591728787.jpg?c=2" style="width:200px; height:125px" onclick="currentSlide(1)" alt="Work Meister S1 3P">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://images.squarespace-cdn.com/content/v1/5b4188367c9327e167175023/1531120530271-YZIH7FQQ52EXOZ75ZRM3/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/LI5C6170.jpg?format=2500w" style="width:200px; height:125px" onclick="currentSlide(2)" alt="Work Meister S1 3P">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://wheels-fitment.com/wheels-images/369/1887/Scion-FR-S-Work-Meister-S1-3P-sm.jpg" style="width:200px; height:125px" onclick="currentSlide(3)" alt="Work Meister S1 3P">
+    </div>
+  </div>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    
+
+<form name="performance_parts_form" action="" method="PUSH">
+                <script>
+                    //Products Loop//
+                    for (i = 0; i <= s1.length; i++) {
+                        document.write(`
+    <section class="item">
+        <h1 style="text-align: center; font-size: 250%" name="item">${s1[i].brand}</h1>
+        <h2>$${s1[i].price}</h2>
+        <label id="quantity${i}_label"}">Quantity</label>
+        <input type="number" placeholder="0" name="quantity${i}" min="1" required message="Please enter a valid quantity"
+                                onkeyup="checkQuantityTextbox(this);">
+        <br>
+    </section>
+    `);
+                    }
+                </script>
+            </main>
+        </div>
+        </div>
+        </main>
+        </div>
+   <script>//Footer coding and style borrowed from W3Schoold</script>
+    <input style="font-size: medium" type="submit" value="Add to Cart" name="addcart">
+    </form>
+</body>
+<br>
+<br>
+<footer>
+ 
+    <div class="footer">
+        <p style="color: white; font-size: 200%; ">CONNECT WITH US</p>
+        <a href="" class="fa fa-facebook"></a>
+      <a href="" class="fa fa-twitter"></a>
+      <a href="" class="fa fa-instagram"></a>
+      </div>
+
+</footer>
+
+</html>

@@ -1,0 +1,202 @@
+/* Code Guidance from w3 School */  
+
+/*Format Titles*/
+h1{
+  font-family: 'Teko', sans-serif;}
+  h2 {
+      font-family: 'Teko', sans-serif; text-align: center; } 
+p {
+  font-family: 'Teko', sans-serif; text-align: center; width: 300px; margin: auto; }
+label {
+  display: block;
+  text-align: center;
+  font-family: 'Teko', sans-serif;
+}
+input {
+  padding: 5px 10px;
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-family: 'Teko', sans-serif;
+}
+
+    /* Header */
+.header {
+  background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://wallpaperaccess.com/full/1908532.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Menu*/
+.topnav {
+  overflow: hidden;
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index:1;
+}
+main{
+
+  text-align: center;
+  display:flex; 
+  flex-flow:row wrap;
+  justify-content:space-around; 
+}
+/* Menu Links */
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: red;
+  color: black;
+}
+
+/* Image styling */  
+img{
+  height:200px;
+  width:300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;}
+
+
+
+  body {
+      font-family: Arial;
+      margin: 0;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    img {
+      vertical-align: middle;
+    }
+    
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+      position: relative;
+    }
+    
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+    }
+    
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+      cursor: pointer;
+    }
+    
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: black;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+    
+    /* Container for image text */
+    .caption-container {
+      text-align: center;
+      background-color: #222;
+      padding: 2px 16px;
+      color: white;
+    }
+    
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Six columns side by side */
+    .column {
+      float: left;
+      width: 33.33%;
+    }
+    
+    /* Add a transparency effect for thumnbail images */
+    .demo {
+      opacity: 0.6;
+    }
+    
+    .active,
+    .demo:hover {
+      opacity: 1;
+    }
+/* Design footer*/
+    .footer {
+      background-color:black;
+      text-align: center;
+      padding: 10px;
+    }
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+    }
+    
+    .fa:hover {
+        opacity: 0.7;
+    }
+    
+    .fa-facebook {
+      background: red;
+      color: white;
+    }
+    
+    .fa-twitter {
+      background: red;
+      color: white;
+    }
+    .fa-instagram {
+      background:red;
+      color: white;
+    }

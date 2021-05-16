@@ -51,13 +51,31 @@
 
   <div class="topnav">
     <a href="index.html" style="font-family: 'Teko', sans-serif ;">HOME</a>
-    <a href="exhaust.html" style="font-family: 'Teko', sans-serif ;">EXHAUST SYSTEMS</a>
-    <a href="fi.html" style="font-family: 'Teko', sans-serif ;">FORCED INDUCTION</a>
-    <a href="suspension.html" style="font-family: 'Teko', sans-serif ;">SUSPENSION</a>
-    <a href="products_display.html" style="font-family: 'Teko', sans-serif ;">ORDER FORM</a>
-    <a href="Sign_in.html" style="font-family: 'Teko', sans-serif ;">SIGN IN</a>
+    <a href="exhaustdisplay.html" style="font-family: 'Teko', sans-serif ;">EXHAUST SYSTEMS</a>
+    <a href="fidisplay.html" style="font-family: 'Teko', sans-serif ;">FORCED INDUCTION</a>
+    <a href="suspension_display.html" style="font-family: 'Teko', sans-serif ;">SUSPENSION</a>
+    <a href="wheeldisplay.html" style="font-family: 'Teko', sans-serif ;">SUSPENSION</a>
+    <a href="cart.html" style="font-family: 'Teko', sans-serif ;">VIEW CART</a>
+    <a href="Sign_in.html" style="font-family: 'Teko', sans-serif ;">LOGIN</a>
+   
+    <a href="userinfo.html" style="font-family: 'Teko', sans-serif ;">
+      <script>
+          //personalizes navbar after login, code assistance from Justina Bui
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+    }
 
-  </div>
+    if (typeof getCookie('username') != 'undefined') {
+      console.log('working');
+     document.write("Welcome" + ' ' + getCookie('username'))
+    }
+
+</script></a> 
+<form name="logout_form" action="" method="PUSH">
+    <input style="font-family: 'Teko', sans-serif ;" type="submit" name="logout" value="Logout"></form>
+</div>
   <br>
 
 
@@ -69,18 +87,11 @@
     else {
       document.write(`<h2>Welcome back ${usern}!</h2>`);
     }
-    //Determines what message is shown after registration/login
-    if (params.has('purchase_submit')) {
-      document.write(`<h2>Thank you for your purchase!</h2>`)
-    }
-    else {
-      document.write(`<h2>Please return to Order Form</h2>`);
-    }
   </script>
-  </h2>
+  <h2>Thank you for your purchase!</h2>
 
   <h2>Purchase Invoice</h2>
-  <table border="2">
+  <table bordercolor="gray">
     <tbody>
       <tr style="background-color: red;">
         <th style="text-align: center;" width="43%">Item</th>
@@ -98,10 +109,10 @@
             document.write(`
   
       <tr>
-        <td width="43%">${exhaust[i].brand}</td>
+        <td width="43%"><img src="${exhaust[i].image}" style="float:left;">${exhaust[i].brand}</td>
         <td align="center" width="11%">${quantities[i]}</td>
-        <td width="13%">\$${exhaust[i].price}</td>
-        <td width="54%">\$${extended_price}</td>
+        <td align="center" width="13%">\$${exhaust[i].price}</td>
+        <td align="center" width="54%">\$${extended_price}</td>
       </tr>
       `);
           }
